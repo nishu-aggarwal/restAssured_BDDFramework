@@ -1,8 +1,0 @@
-package RunnerPackage;
-
-import cucumber.api.CucumberOptions;
-
-@CucumberOptions()
-public class RunnerClass {
-
-}

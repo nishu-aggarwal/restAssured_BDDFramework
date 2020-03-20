@@ -1,6 +1,0 @@
-package RunnerPackage;
-
-@CucumberOptions();
-public class RunnerClass {
-
-}

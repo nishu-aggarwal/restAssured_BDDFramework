@@ -7,7 +7,12 @@ formatter.feature({
 formatter.scenario({
   "name": "Verify if employee data is retrieved",
   "description": "",
-  "keyword": "Scenario"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@TestingScenario"
+    }
+  ]
 });
 formatter.step({
   "name": "Employee API is triggered",
@@ -52,7 +57,12 @@ formatter.result({
 formatter.scenarioOutline({
   "name": "Verify if Employee data is updated successfully",
   "description": "",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@TestingScenario"
+    }
+  ]
 });
 formatter.step({
   "name": "Add Employee Payload with \"\u003cname\u003e\" \"\u003csalary\u003e\" \"\u003cage\u003e\"",
@@ -105,7 +115,12 @@ formatter.examples({
 formatter.scenario({
   "name": "Verify if Employee data is updated successfully",
   "description": "",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@TestingScenario"
+    }
+  ]
 });
 formatter.step({
   "name": "Add Employee Payload with \"DummyVal12\" \"500000\" \"30\"",
@@ -160,7 +175,12 @@ formatter.result({
 formatter.scenario({
   "name": "Verify if Employee data is updated successfully",
   "description": "",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@TestingScenario"
+    }
+  ]
 });
 formatter.step({
   "name": "Add Employee Payload with \"Dummy2\" \"600000\" \"40\"",

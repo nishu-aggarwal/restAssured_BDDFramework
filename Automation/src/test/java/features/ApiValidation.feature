@@ -1,11 +1,13 @@
 Feature: Validating employee API
 
+@TestingScenario
 Scenario: Verify if employee data is retrieved 
 Given Employee API is triggered
 When User calls "GetEmployeeAPI" with "GET" Http Request
 Then API Call is "success" with Status Code "200"
 And "status" in Response Body is "success"
 
+@TestingScenario
 Scenario Outline: Verify if Employee data is updated successfully
 Given Add Employee Payload with "<name>" "<salary>" "<age>"
 When User calls "CreateEmployeeAPI" with "POST" Http Request 
