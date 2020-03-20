@@ -13,6 +13,6 @@ import io.cucumber.junit.CucumberOptions;
 				             monochrome = true,
 				 glue = {"stepdefinitions"}, strict = true)
 public class RunnerClass {
-	//Changes 
+	 
 }
 
