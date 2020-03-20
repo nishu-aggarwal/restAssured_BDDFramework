@@ -1,0 +1,17 @@
+package resources;
+
+public enum APIConstants {
+
+	GetEmployeeAPI("/api/v1/employees"),
+	CreateEmployeeAPI("/api/v1/create"),
+	PROPERTIES_FILE_PATH("/Automation/src/test/java/resources/global.properties");
+	
+	private String resource;
+	APIConstants(String resource) {
+		this.resource = resource;
+	}
+			
+	public String getResource() {
+		return resource;
+	}
+}

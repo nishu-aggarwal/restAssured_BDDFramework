@@ -1,0 +1,8 @@
+package RunnerPackage;
+
+import io.cucumber.junit.CucumberOptions;
+
+@CucumberOptions(features="src/test/java/features")
+public class RunnerClass {
+
+}

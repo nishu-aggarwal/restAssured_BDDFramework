@@ -1,0 +1,9 @@
+package ApiTesting.Automation;
+
+
+/**
+ * Unit test for simple App.
+ */
+public class AppTest 
+{
+}

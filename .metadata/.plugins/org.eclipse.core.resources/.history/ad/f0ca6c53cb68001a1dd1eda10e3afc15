@@ -1,0 +1,33 @@
+package resources;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.Properties;
+
+import io.restassured.RestAssured;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
+import io.restassured.specification.RequestSpecification;
+
+public class Reusable {
+
+	RequestSpecification reqSpec;
+	public RequestSpecification reqSpecifications() throws FileNotFoundException{
+		PrintStream log = new PrintStream(new FileOutputStream("LogFile.txt"));
+		RestAssured.baseURI = "http://dummy.restapiexample.com";
+		reqSpec = RestAssured.given().filter(RequestLoggingFilter.logRequestTo(log)).filter(ResponseLoggingFilter.logResponseTo(log));
+		return reqSpec;
+	
+	}
+	
+	public Properties GetGlobalValues(String key) throws IOException {
+		Properties prop = new Properties();
+		FileInputStream fis = new FileInputStream("/src/test/java/resources/global.properties");
+		prop.load(fis);
+		prop.getProperty(key);
+		return prop;
+	}
+}

@@ -1,0 +1,17 @@
+package resources;
+
+import ApiTesting.Automation.AddEmployee;
+
+public class TestDataBuild {
+
+	public AddEmployee AddEmployeePayload(String id, String name, String salary, String age) {
+		
+		AddEmployee add = new AddEmployee();
+    	add.setId(id);
+    	add.setEmployeeName(name);
+    	add.setEmployeeSalary(salary);
+    	add.setEmployeeAge(age);
+    	
+    	return add;
+	}
+}

@@ -1,0 +1,2 @@
+baseURL = http://dummy.restapiexample.com
+reportConfigPath = /Automation/src/test/java/resources/extent-config.xml

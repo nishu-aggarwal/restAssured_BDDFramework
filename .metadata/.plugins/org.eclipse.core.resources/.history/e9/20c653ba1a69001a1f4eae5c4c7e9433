@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="6.522">
+<testcase classname="Validating employee API" name="Verify if employee data is successfully added" time="2.39">
+<system-out><![CDATA[Given Employee API is triggered.............................................passed
+When User calls "GetEmployeeAPI" with "GET" Http Request....................passed
+Then API Call is "success" with Status Code "200"...........................passed
+And "status" in Response Body is "success"..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Validating employee API" name="Verify if Employee data is updated successfully" time="2.145">
+<system-out><![CDATA[Given Add Employee Payload with "DummyVal12" "500000" "30"..................passed
+When User calls "CreateEmployeeAPI" with "POST" Http Request................passed
+Then API Call is "success" with Status Code "200"...........................passed
+And "status" in Response Body is "success"..................................passed
+And verify employee data "DummyVal12" is added using "GetEmployeeAPI".......passed
+]]></system-out>
+</testcase>
+<testcase classname="Validating employee API" name="Verify if Employee data is updated successfully 2" time="1.878">
+<system-out><![CDATA[Given Add Employee Payload with "Dummy2" "600000" "40"......................passed
+When User calls "CreateEmployeeAPI" with "POST" Http Request................passed
+Then API Call is "success" with Status Code "200"...........................passed
+And "status" in Response Body is "success"..................................passed
+And verify employee data "Dummy2" is added using "GetEmployeeAPI"...........passed
+]]></system-out>
+</testcase>
+</testsuite>

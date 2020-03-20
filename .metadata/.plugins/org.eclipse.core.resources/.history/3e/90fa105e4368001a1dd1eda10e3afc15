@@ -1,0 +1,23 @@
+package resources;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+
+import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.http.ContentType;
+import io.restassured.specification.RequestSpecification;
+
+public class Reusable {
+
+	RequestSpecification reqSpec;
+	public RequestSpecification reqSpecifications() throws FileNotFoundException{
+		PrintStream log = new PrintStream(new FileOutputStream("LogFile.txt"));
+		RestAssured.baseURI = "http://dummy.restapiexample.com";
+		reqSpec = RestAssured.given();
+		reqSpec = reqSpec.filter(RequestLoggingFilter.logRequestTo(log));
+		return reqSpec;
+	}
+}

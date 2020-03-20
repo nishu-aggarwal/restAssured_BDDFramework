@@ -1,0 +1,8 @@
+package resources;
+
+public enum APIConstants {
+
+	GetEmployeeAPI("/api/v1/employees"),
+	CreateEmployeeAPI("/api/v1/create");
+			
+}

@@ -1,0 +1,47 @@
+package ApiTesting.Automation;
+
+public class AddEmployee {
+
+	private int id;
+	private String employee_name;
+	private String employee_salary;
+	private String employee_age;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getEmployeeName() {
+		return name;
+	}
+	public void setEmployeeName(String name) {
+		this.name = name;
+	}
+	public String getEmployeeSalary() {
+		return phone_number;
+	}
+	public void setEmployeeSalary(String phone_number) {
+		this.phone_number = phone_number;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getWebsite() {
+		return website;
+	}
+	public void setWebsite(String website) {
+		this.website = website;
+	}
+	public String getLanguage() {
+		return language;
+	}
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+	
+}

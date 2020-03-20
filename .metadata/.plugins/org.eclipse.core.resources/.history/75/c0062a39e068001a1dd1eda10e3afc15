@@ -1,0 +1,16 @@
+package resources;
+
+public enum APIConstants {
+
+	GetEmployeeAPI("/api/v1/employee/5"),
+	CreateEmployeeAPI("/api/v1/create");
+
+	private String resource;
+	APIConstants(String resource) {
+		this.resource = resource;
+	}
+			
+	public String getResource() {
+		return resource;
+	}
+}

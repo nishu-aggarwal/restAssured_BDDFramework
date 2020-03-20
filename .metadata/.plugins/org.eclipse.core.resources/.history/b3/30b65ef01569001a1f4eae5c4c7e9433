@@ -1,0 +1,23 @@
+package config;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class ConfigFileReader {
+
+	public String getReportConfigPath() throws IOException{
+		
+		String reportConfigPath = getProperty("reportConfigPath");
+		if(reportConfigPath!= null) return reportConfigPath;
+		else throw new RuntimeException("Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");		
+	}
+	
+	public static String getProperty(String key) throws IOException {
+		Properties prop = new Properties();
+		FileInputStream fis = new FileInputStream("/Users/nisaggar1/Desktop/Cucumber_RestAssured/Automation/src/test/java/config/configuration.properties");
+		prop.load(fis);
+		return prop.getProperty(key);
+		
+	}
+}

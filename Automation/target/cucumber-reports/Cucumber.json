@@ -1,0 +1,351 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-03-19T05:30:17.553Z",
+        "line": 3,
+        "name": "Verify if employee data is retrieved",
+        "description": "",
+        "id": "validating-employee-api;verify-if-employee-data-is-retrieved",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1462000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Employee API is triggered",
+            "match": {
+              "location": "stepdefinitions.StepDefinition.employee_api_is_triggered()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3636000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User calls \"GetEmployeeAPI\" with \"GET\" Http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GetEmployeeAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"GET\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepdefinitions.StepDefinition.user_calls_with_Http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "API Call is \"success\" with Status Code \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "success",
+                  "offset": 13
+                },
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepdefinitions.StepDefinition.api_call_is_something_with_status_code_something(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1794000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "\"status\" in Response Body is \"success\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"status\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"success\"",
+                  "offset": 29
+                }
+              ],
+              "location": "stepdefinitions.StepDefinition.status_in_response_body_is_something(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-03-19T05:30:24.632Z",
+        "line": 18,
+        "name": "Verify if Employee data is updated successfully",
+        "description": "",
+        "id": "validating-employee-api;verify-if-employee-data-is-updated-successfully;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 628000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Add Employee Payload with \"DummyVal12\" \"500000\" \"30\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"DummyVal12\"",
+                  "offset": 26
+                },
+                {
+                  "val": "\"500000\"",
+                  "offset": 39
+                },
+                {
+                  "val": "\"30\"",
+                  "offset": 48
+                }
+              ],
+              "location": "stepdefinitions.StepDefinition.add_Employee_Payload_with(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1073000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User calls \"CreateEmployeeAPI\" with \"POST\" Http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CreateEmployeeAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepdefinitions.StepDefinition.user_calls_with_Http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "API Call is \"success\" with Status Code \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "success",
+                  "offset": 13
+                },
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepdefinitions.StepDefinition.api_call_is_something_with_status_code_something(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 72000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "\"status\" in Response Body is \"success\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"status\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"success\"",
+                  "offset": 29
+                }
+              ],
+              "location": "stepdefinitions.StepDefinition.status_in_response_body_is_something(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 966000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "verify employee data \"DummyVal12\" is added using \"GetEmployeeAPI\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"DummyVal12\"",
+                  "offset": 21
+                },
+                {
+                  "val": "\"GetEmployeeAPI\"",
+                  "offset": 49
+                }
+              ],
+              "location": "stepdefinitions.StepDefinition.verify_employee_data_is_added_using(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-03-19T05:30:27.405Z",
+        "line": 19,
+        "name": "Verify if Employee data is updated successfully",
+        "description": "",
+        "id": "validating-employee-api;verify-if-employee-data-is-updated-successfully;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 11000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Add Employee Payload with \"Dummy2\" \"600000\" \"40\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Dummy2\"",
+                  "offset": 26
+                },
+                {
+                  "val": "\"600000\"",
+                  "offset": 35
+                },
+                {
+                  "val": "\"40\"",
+                  "offset": 44
+                }
+              ],
+              "location": "stepdefinitions.StepDefinition.add_Employee_Payload_with(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 977000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User calls \"CreateEmployeeAPI\" with \"POST\" Http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CreateEmployeeAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepdefinitions.StepDefinition.user_calls_with_Http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "API Call is \"success\" with Status Code \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "success",
+                  "offset": 13
+                },
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepdefinitions.StepDefinition.api_call_is_something_with_status_code_something(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 201000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "\"status\" in Response Body is \"success\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"status\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"success\"",
+                  "offset": 29
+                }
+              ],
+              "location": "stepdefinitions.StepDefinition.status_in_response_body_is_something(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 832000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "verify employee data \"Dummy2\" is added using \"GetEmployeeAPI\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Dummy2\"",
+                  "offset": 21
+                },
+                {
+                  "val": "\"GetEmployeeAPI\"",
+                  "offset": 45
+                }
+              ],
+              "location": "stepdefinitions.StepDefinition.verify_employee_data_is_added_using(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Validating employee API",
+    "description": "",
+    "id": "validating-employee-api",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/ApiValidation.feature",
+    "tags": []
+  }
+]

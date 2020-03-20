@@ -1,0 +1,26 @@
+package ApiTesting.Automation;
+
+public class Payload {
+
+	public static String AddEmployee() {
+		return "{\n" + 
+				"	\"data\":[\n" + 
+				"		{\n" + 
+				"			\"id\":\"100\",\n" + 
+				"			\"employee_name\":\"Employee_Hundred\",\n" + 
+				"			\"employee_salary\":\"320800\",\n" + 
+				"			\"employee_age\":\"61\",\n" + 
+				"			\"profile_image\":\"\"\n" + 
+				"		},\n" + 
+				"		{\n" + 
+				"			\"id\":\"200\",\n" + 
+				"			\"employee_name\":\"EmployeeTwo\",\n" + 
+				"			\"employee_salary\":\"170750\",\n" + 
+				"			\"employee_age\":\"63\",\n" + 
+				"			\"profile_image\":\"\"\n" + 
+				"			\n" + 
+				"		}]\n" + 
+				"}"
+				+ "";
+	}
+}

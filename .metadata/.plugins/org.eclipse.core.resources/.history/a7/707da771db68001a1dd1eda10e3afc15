@@ -1,0 +1,19 @@
+Feature: Validating employee API
+
+Scenario Outline: Verify if Employee data is updated successfully
+Given Employee API is triggered
+When User call "CreateEmployeeAPI" with POST Http Request with "<id>" "<name>" "<salary>" "<age>"
+Then API Call is "success" with Status Code "200"
+And "status" in Response Body is "success"
+
+Examples:
+	| id |        name       | salary | age |
+	| 80 | Employee_Eighty   | 500000 | 30  |
+	| 81 | Employee_EightOne | 600000 | 40  | 
+
+Scenario: Verify if employee data is successfully added
+Given Employee API is triggered
+When User calls "GetEmployeeAPI" with Get Http Request
+Then API Call is "success" with Status Code "200"
+And "status" in Response Body is "success"
+

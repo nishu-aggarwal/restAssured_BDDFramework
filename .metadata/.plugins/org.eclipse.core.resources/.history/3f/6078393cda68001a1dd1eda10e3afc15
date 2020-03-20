@@ -1,0 +1,3 @@
+baseURL = http://dummy.restapiexample.com
+getAPI = /api/v1/employees
+createAPI = /api/v1/create

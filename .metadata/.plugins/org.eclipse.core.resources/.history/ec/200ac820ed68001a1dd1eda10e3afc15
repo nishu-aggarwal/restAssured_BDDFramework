@@ -1,0 +1,84 @@
+package stepdefinitions;
+
+
+import static org.junit.Assert.assertEquals;
+
+import java.io.IOException;
+
+import org.junit.Assert;
+import org.junit.runner.RunWith;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.cucumber.junit.Cucumber;
+import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.http.ContentType;
+import io.restassured.http.Method;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
+import resources.APIConstants;
+import resources.Reusable;
+import resources.TestDataBuild;
+
+@RunWith(Cucumber.class)
+public class StepDefinition extends Reusable{
+	
+	ResponseSpecification resSpec;
+	String responseBody;
+	Response response;
+	TestDataBuild data = new TestDataBuild();
+	String id;
+	JsonPath js;
+    @Given("^Employee API is triggered$")
+    public void employee_api_is_triggered() throws Throwable {
+		
+    	resSpec = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+    	
+    	
+    }
+
+    @Then("^API Call is \"([^\"]*)\" with Status Code \"([^\"]*)\"$")
+    public void api_call_is_something_with_status_code_something(String strArg1, String strArg2) throws Throwable {
+    	int expectedStatusCode = Integer.parseInt(strArg2);
+    	Assert.assertEquals(expectedStatusCode, response.getStatusCode());
+    	System.out.println("Status code is as expected:"+expectedStatusCode);
+    	System.out.println("Api call is: "+strArg1);
+    }
+
+    @Then("{string} in Response Body is {string}")
+    public void status_in_response_body_is_something(String strArg1, String strArg2) throws Throwable {
+    	JsonPath js = response.jsonPath();
+    	id = js.get("id").toString();
+    	assertEquals(js.get(strArg1).toString(), strArg2);
+    	System.out.println("'"+strArg1+"' in response body is: "+strArg2);
+    }
+
+
+    @Given("Add Employee Payload with {string} {string} {string}")
+    public void add_Employee_Payload_with(String name, String salary, String age) throws IOException {
+    	reqSpecifications().queryParam("key", "qaclick");
+    	reqSpecifications().body(data.AddEmployeePayload(name, salary, age));
+    	reqSpecifications().header("Content-Type", "application/json");
+    }
+    
+    @When("User calls {string} with {string} Http Request")
+    public void user_calls_with_Http_Request(String resource, String method) throws IOException {
+    	APIConstants apiResource = APIConstants.valueOf(resource);
+    	response = reqSpecifications().request(Method.valueOf(method), apiResource.getResource());
+    	responseBody  = response.asString();
+    }
+
+    @Then("verify employee data {string} is added using {string}")
+    public void verify_employee_data_is_added_using(String name, String resource) throws IOException {
+    	
+    	reqSpecifications().queryParam("id", id);
+    	user_calls_with_Http_Request(resource, "GET");
+    	JsonPath jsonPathEvaluator = response.jsonPath();
+		String employeeName = jsonPathEvaluator.get("employee_name");
+		Assert.assertEquals(employeeName, name, "Employee details is updated successfully");
+    }
+        
+}

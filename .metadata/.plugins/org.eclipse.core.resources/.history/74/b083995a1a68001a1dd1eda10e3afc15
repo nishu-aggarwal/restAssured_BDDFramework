@@ -1,0 +1,35 @@
+package ApiTesting.Automation;
+
+public class AddEmployee {
+
+	private int id;
+	private String employee_name;
+	private String employee_salary;
+	private String employee_age;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getEmployeeName() {
+		return employee_name;
+	}
+	public void setEmployeeName(String employee_name) {
+		this.employee_name = employee_name;
+	}
+	public String getEmployeeSalary() {
+		return employee_salary;
+	}
+	public void setEmployeeSalary(String employee_salary) {
+		this.employee_salary = employee_salary;
+	}
+	public String getEmployeeAge() {
+		return employee_age;
+	}
+	public void setEmployeeAge(int employee_age) {
+		this.employee_age = employee_age;
+	}
+	
+}
